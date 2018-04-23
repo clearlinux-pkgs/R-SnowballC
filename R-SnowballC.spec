@@ -4,7 +4,7 @@
 #
 Name     : R-SnowballC
 Version  : 0.5.1
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/SnowballC_0.5.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/SnowballC_0.5.1.tar.gz
 Summary  : Snowball stemmers based on the C libstemmer UTF-8 library
