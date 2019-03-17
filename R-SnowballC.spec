@@ -4,7 +4,7 @@
 #
 Name     : R-SnowballC
 Version  : 0.6.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/SnowballC_0.6.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/SnowballC_0.6.0.tar.gz
 Summary  : Snowball Stemmers Based on the C 'libstemmer' UTF-8 Library
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1547576033
+export SOURCE_DATE_EPOCH=1552797756
 
 %install
-export SOURCE_DATE_EPOCH=1547576033
+export SOURCE_DATE_EPOCH=1552797756
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library SnowballC|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  SnowballC || :
 
 
 %files
@@ -102,7 +101,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/SnowballC/help/paths.rds
 /usr/lib64/R/library/SnowballC/html/00Index.html
 /usr/lib64/R/library/SnowballC/html/R.css
-/usr/lib64/R/library/SnowballC/libs/symbols.rds
 /usr/lib64/R/library/SnowballC/words.R
 /usr/lib64/R/library/SnowballC/words/danish.RData
 /usr/lib64/R/library/SnowballC/words/dutch.RData
@@ -124,5 +122,3 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/SnowballC/libs/SnowballC.so
-/usr/lib64/R/library/SnowballC/libs/SnowballC.so.avx2
-/usr/lib64/R/library/SnowballC/libs/SnowballC.so.avx512
