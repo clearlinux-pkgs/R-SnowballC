@@ -4,7 +4,7 @@
 #
 Name     : R-SnowballC
 Version  : 0.7.0
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/SnowballC_0.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/SnowballC_0.7.0.tar.gz
 Summary  : Snowball Stemmers Based on the C 'libstemmer' UTF-8 Library
@@ -30,21 +30,22 @@ lib components for the R-SnowballC package.
 
 %prep
 %setup -q -c -n SnowballC
+cd %{_builddir}/SnowballC
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585959001
+export SOURCE_DATE_EPOCH=1589526174
 
 %install
-export SOURCE_DATE_EPOCH=1585959001
+export SOURCE_DATE_EPOCH=1589526174
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
